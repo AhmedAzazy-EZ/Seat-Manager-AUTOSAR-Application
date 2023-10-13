@@ -1,0 +1,36 @@
+/**
+ *
+ * \file InclineMotor_Template.c
+ * \brief Rte Component Template for AUTOSAR SWC: InclineMotor
+ *
+ * \author Sprints AUTOSAR Authoring Tool (SAAT) v1.0.2
+ * Generated on 10/11/2023 01:02 AM
+ *
+ * For any inquiries: hassan.m.farahat@gmail.com
+ *
+ */
+
+#include "Rte_InclineMotor.h"
+
+
+/**
+ *
+ * Runnable InclineMotorMove
+ *
+ * Triggered By:
+ *  - OperationInvokedEventImpl.OIE_ppInclineMotor_Opr_InclineMotorMove
+ *
+ */
+
+void InclineMotorMove (uint8 Arg_step)
+{
+	Std_ReturnType status;
+
+	/* Server Call Points */
+	if(Arg_step == MOTOR_STEP_PLUS)
+		status = Rte_Call_rpIoInclineSetMotor_IoSetForward();
+	if(Arg_step == MOTOR_STEP_MINUS)
+		status = Rte_Call_rpIoInclineSetMotor_IoSetReverse();
+	
+}
+
